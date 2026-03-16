@@ -1,0 +1,4 @@
+2026-03-14 requestId=123 service=Gateway duration=20
+2026-03-14 requestId=123 service=OrderService duration=120
+2026-03-14 requestId=123 service=PaymentService duration=900
+2026-03-14 requestId=123 service=InventoryService duration=50

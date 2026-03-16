@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "trace-debugger": {
+      "type": "stdio",
+      "command": "./venv/Scripts/python",
+      "args": ["trace_log_mcp.py"],
+      "cwd": "c:/Users/ronit/ai/mcp-trace-debugger"
+    }
+  }
+}
