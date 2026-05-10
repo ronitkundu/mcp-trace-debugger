@@ -3,14 +3,13 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("trace-debugger")
 
 
-if __name__ == "__main__":
-    mcp.run()
+
 
 def parse_logs(request_id):
 
     results = []
 
-    with open("microservices.log", "r") as file:
+    with open("logs/microservices.log", "r") as file:
         for line in file:
 
             if f"requestId={request_id}" in line:
@@ -18,7 +17,7 @@ def parse_logs(request_id):
                 parts = line.split()
 
                 service = parts[2].split("=")[1]
-                duration = int(parts[4].split("=")[1])
+                duration = int(parts[3].split("=")[1])
 
                 results.append({
                     "service": service,
@@ -27,7 +26,7 @@ def parse_logs(request_id):
 
     return results
 
-@mcp.tool()
+@mcp.tool('trace_request')
 def trace_request(request_id: str):
 
     spans = parse_logs(request_id)
@@ -48,4 +47,5 @@ def trace_request(request_id: str):
     }
     
     
-    
+if __name__ == "__main__":
+    mcp.run()

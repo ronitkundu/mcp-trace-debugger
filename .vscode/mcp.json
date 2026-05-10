@@ -2,7 +2,7 @@
   "servers": {
     "trace-debugger": {
       "type": "stdio",
-      "command": "./venv/Scripts/python",
+      "command": "C:/Users/ronit/ai/mcp-trace-debugger/venv/Scripts/python.exe",
       "args": ["trace_log_mcp.py"],
       "cwd": "c:/Users/ronit/ai/mcp-trace-debugger"
     }
